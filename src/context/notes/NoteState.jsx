@@ -2,7 +2,7 @@ import NoteContext from "./NoteContext";
 import { useState } from "react";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://mynotesxdbackend.herokuapp.com";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
 
@@ -58,7 +58,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
-        "Accept": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify({ title, description, tag }),
     });
